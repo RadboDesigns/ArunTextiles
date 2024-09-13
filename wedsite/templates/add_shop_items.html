@@ -1,0 +1,157 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+<main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Dashboard</a></li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">New Arrivals</li>
+                </ol>
+                <h6 class="font-weight-bolder text-white mb-0">New Arrivals</h6>
+            </nav>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-10" style="padding:16px;">
+                            <h4 style="margin-left:10px">Best Sellers</h4>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="product_picture">Picture</label>
+                                    {{ form.product_picture(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="product_picture_zoom">Zoom Picture</label>
+                                    {{ form.product_picture_zoom(class_="form-control") }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="product_name">Product Name</label>
+                                    {{ form.product_name(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="product_code">Product Code</label>
+                                    {{ form.product_code(class_="form-control") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="about_product">About Product</label>
+                                    {{ form.about_product(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="product_tag">Tag</label>
+                                    {{ form.product_tag(class_="form-control") }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="single_product_price">Single Piece Price</label>
+                                    {{ form.single_product_price(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="no_of_products_price">Total Products Price</label>
+                                    {{ form.no_of_products_price(class_="form-control") }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="no_of_products">No. of Products</label>
+                                    {{ form.no_of_products(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="brand_name">Brand Name</label>
+                                    {{ form.brand_name(class_="form-control") }}
+                                </div>
+                            </div>
+
+                            <div class="row" id="size-number-container">
+                                <div class="col-md-6 form-group">
+                                    <label for="product_sizes">Sizes</label>
+                                    <select id="product_sizes" class="form-control">
+                                        <option value="s">Small</option>
+                                        <option value="m">Medium</option>
+                                        <option value="l">Large</option>
+                                        <option value="xl">Extra Large</option>
+                                        <option value="xxl">XXL</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>&nbsp;</label>
+                                    <button type="button" id="add-size" class="btn btn-primary form-control">Add Size</button>
+                                </div>
+                            </div>
+
+                            <div id="dynamic-size-fields"></div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="certian_number_products">Certain Number of Products</label>
+                                    {{ form.certian_number_products(class_="form-control") }}
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="certian_number_products_discount">Certain Number of Products Discount</label>
+                                    {{ form.certian_number_products_discount(class_="form-control") }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.add_product(class_="btn btn-primary") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const addSizeButton = document.getElementById('add-size');
+        const sizeSelect = document.getElementById('product_sizes');
+        const dynamicSizeFields = document.getElementById('dynamic-size-fields');
+
+        addSizeButton.addEventListener('click', function () {
+            const selectedSize = sizeSelect.value;
+            const sizeName = sizeSelect.options[sizeSelect.selectedIndex].text;
+            const existingField = document.querySelector(`input[name="product_sizes_no_for_${selectedSize}"]`);
+            if (!existingField) {
+                const div = document.createElement('div');
+                div.className = 'col-md-6 form-group';
+                div.innerHTML = `
+                    <label for="product_sizes_no_for_${selectedSize}">Number of Products for ${sizeName}</label>
+                    <input type="number" name="product_sizes_no_for_${selectedSize}" class="form-control" min="1" max="50" required>
+                    <button type="button" class="btn btn-danger btn-sm remove-size" style="margin-top: 5px;">Remove</button>
+                `;
+                dynamicSizeFields.appendChild(div);
+            }
+        });
+
+        dynamicSizeFields.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-size')) {
+                e.target.closest('.form-group').remove();
+            }
+        });
+    });
+</script>
+{% endblock %}

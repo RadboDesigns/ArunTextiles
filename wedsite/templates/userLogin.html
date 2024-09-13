@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main class="main">
+  <section class="pt-150 pb-150">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-5"> <!-- Adjusted column width -->
+                  <div class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
+                      <div class="padding_eight_all bg-white">
+                          <div class="heading_s1">
+                              <h3 class="mb-30">Login</h3>
+                          </div>
+
+                          {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                              <div class="alert alert-warning">
+                                {% for category, message in messages %}
+                                  <p style="color: black;">{{ message }}</p>
+                                {% endfor %}
+                              </div>
+                            {% endif %}
+                          {% endwith %}
+
+                          <form method="POST" action="{{ url_for('auth.userLogin') }}">
+                            {{ form.hidden_tag() }}
+                              <div class="form-group">
+                                  {{ form.email.label }}
+                                  {{ form.email(class_='form-control', placeholder='User Name') }}
+                              </div>
+                              <div class="form-group">
+                                  {{ form.password.label }}
+                                  {{ form.password(class_='form-control', placeholder='Password') }}
+                              </div>
+                              <div class="login_footer form-group">
+                                  <div class="chek-form">
+                                      <div class="custome-checkbox">
+                                          <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
+                                          <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
+                                      </div>
+                                  </div>
+                                  <a class="text-muted" href="#">Forgot password?</a>
+                              </div>
+                              <div class="form-group">
+                                  {{ form.submit(class_='btn btn-fill-out btn-block hover-up') }}
+                              </div>
+                              <div class="text-muted text-center">Create a new account? <a href="{{ url_for('auth.userSignUp') }}">Sign up now</a></div>
+                              <div class="text-muted text-center">Admin <a href="{{ url_for('views.adminLoginPage') }}">Login</a></div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</main>
+{% endblock %}

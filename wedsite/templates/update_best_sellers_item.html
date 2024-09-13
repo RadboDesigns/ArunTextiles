@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='img/apple-icon.png') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <title>
+    Arun Textiles Dashboard 
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="{{ url_for('static', filename='css/nucleo-icons.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/nucleo-svg.css') }}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{{ url_for('static', filename='css/nucleo-svg.css') }}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{ url_for('static', filename='css/argon-dashboard.css') }}" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300  position-absolute w-100" style="background-color:#2f515a;"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="{{ url_for('views.index') }} " target="_blank" style="height:160px; width:350px; margin-top:12px;">
+        <img src="{{ url_for('static', filename='imgs/theme/logo-2.svg') }}" class="navbar-brand-img" alt="main_logo"></a>
+          <span class="ms-1 font-weight-bold text-white"></span>
+        </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('auth.dashboard') }} ">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('admin.dash_product') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Products</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('admin.shop_items') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">New Arrivales</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('admin.dash_bestseller') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Best Sellers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('admin.dash_bestoffers') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Best Offers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('admin.dash_insta') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Instagram</span>
+          </a>
+        </li>
+        
+        
+   
+      </ul>
+    </div>
+  </aside>
+
+
+{% block content %}
+
+<main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Dashboard</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Best Sellers</li>
+          </ol>
+          <h6 class="font-weight-bolder text-white mb-0">Best Sellers</h6>
+        </nav>
+       
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- <hr> -->
+
+    <!-- Table to display existing products -->
+    
+
+   
+    <div class="container">
+
+        <div class="row">
+        
+            <div class="col-md-12">
+    
+                <div class="card">
+    
+                    <div class="row">
+                        <div class="col-md-10" style="padding:16px;">
+                            <h4 style="margin-left:10px">Best Sellers</h4> 
+                        </div>
+    
+                    </div>
+    
+                    <div class="card-body" id="products-table">
+    
+                      <table class="table table-bordered table-striped">
+    
+                        <thead>
+                            <tr>
+                              <th scope="col">Product Picture</th>
+                              <th scope="col">Zoom Picture</th>
+                              <th scope="col">Product Name</th>
+                              <th scope="col">About Product</th>
+                              <th scope="col">Single Piece Price</th>
+                              <th scope="col">Brand Name</th>
+                              <th scope="col">No. of Products</th>
+                              <th scope="col">Set Price</th>
+                              <th scope="col">Product Code</th>
+                              <th scope="col">Product Tag</th>
+                              <th scope="col">No.of Sizes S</th>
+                              <th scope="col">No.of Sizes M</th>
+                              <th scope="col">No.of Sizes L</th>
+                              <th scope="col">No.of Sizes XL</th>
+                              <th scope="col">No.of Sizes XXL</th>
+                              <th scope="col">Certain Qty</th>
+                              <th scope="col">Discount</th>
+                              <th scope="col">Action</th>
+                                <th>Add</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <form action="" method="post" enctype="multipart/form-data">
+
+
+                                    <td><input type="text" name="product_name" class="form-control" value="{{item_to_update.product_picture}}"></td>
+                                    <td><input type="text" name="previous_price" class="form-control" value="{{item_to_update.product_picture_zoom}}"></td>
+                                    <td><input type="text" name="current_price" class="form-control" value="{{ item_to_update.current_price }}"></td>
+                                    <td><input type="text" name="product_picture" class="form-control" value="{{ item_to_update.product_name }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.about_product }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.single_product_price }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.brand_name }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.no_of_products }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.no_of_products_price }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_code }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_tag }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_sizes_no_for_s }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_sizes_no_for_m }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_sizes_no_for_l }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_sizes_no_for_xl }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.product_sizes_no_for_xxl }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.certian_number_products }}"></td>
+                                    <td><input type="text" name="product_picture_zoom" class="form-control" value="{{ item_to_update.certian_number_products_discount }}"></td>
+                                    <td>
+                                      <select name="product_tag" class="form-select">
+                                        <option value="all"
+                                        {% if 'all' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >All</option>
+                                        <option value="men"
+                                        {% if 'men' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >Men</option>
+                                        <option value="women"
+                                        {% if 'Woman' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >Woman</option>
+                                        <option value="boys"
+                                        {% if 'boys' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >Boys</option>
+                                        <option value="girls"
+                                        {% if 'girls' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >Girls</option>
+                                        <option value="kids"
+                                        {% if 'kids' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >kids</option>
+                                        <option value="kids"
+                                        {% if 'newBorn' in item_to_update.product_tag %}
+                                        selected
+                                        {% endif %}
+                                        >kids</option>
+                                      </select>
+                                    </td>
+                                    <td>
+                                      <input type="submit" name="submit" value="submit" class="btn btn-success"> 
+                                    </td>
+                                </form>
+                            </tr>
+                        </tbody>
+
+                    </table>
+    
+                    </div>
+                </div>
+    
+            </div>
+           
+        </div>
+        
+
+        
+
+  
+  <!--   Core JS Files   -->
+  <script src="{{ url_for('static', filename='js/core/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugins/perfect-scrollbar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugins/smooth-scrollbar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugins/chartjs.min.js') }}"></script>
+  <script>
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{ url_for('static', filename='js/argon-dashboard.min.js') }}"></script>
+</body>
+
+
+
+
+
+{% endblock %}
+

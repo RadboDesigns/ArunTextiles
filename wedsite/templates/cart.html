@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arun Textiles</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="For all your textile needs">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Textile manufacturing, Fabric production, Apparel industry,Fashion keywords, Clothing production, Textile processing,Yarn production, Thread production, Fabric finishing, Textile finishing, Dyeing and printing, Weaving and knitting, Apparel design, Fashion design, Textile technology, Textile engineering, Tirupur textiles, Arun textiles, Textiles industry tamilnadu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <style>
+        .header-nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .header-nav ul li {
+            display: inline-block;
+            padding: 10px 15px;
+        }
+        .header-nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .header-action-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-action-icon-2 {
+            margin-left: 15px;
+        }
+        .dropdown-menu {
+            padding: 0;
+            border-radius: 0;
+        }
+        .dropdown-menu .dropdown-item {
+            padding: 10px 20px;
+        }
+        .dropdown-toggle::after {
+            display: none;
+        }
+        .burger-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+        }
+        .burger-icon span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            margin: 4px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 66px;
+            max-height: 70px;
+            width: auto;
+            max-width: 250px;
+        }
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-nav,
+        .header-action-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-info a {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-area header-style-4 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block" style="background-color:#2f515a;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li style="color:white;"><i class="fi-rs-marker"></i><a href="https://maps.app.goo.gl/mAfWA1dnAhPTsMmQ9" style="color:white;">Our Location : Khaderpet, Tirupur</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block" style="color:white;font-size:12px;">
+                                <ul>
+                                    <li>Get great Products up to 60% off</li>
+                                    <li>Super Value Deals - Save more with coupons</li>
+                                    <li>Use Promo Code ATX2024 for 10% OFF</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+                            <a href="https://www.facebook.com/aruntextiless" target="_blank" style="margin-right: 30px;">
+                                <i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"></i>
+                            </a>
+                            <a href="https://instagram.com/aruntextiless" target="_blank" style="margin-right: 30px;">
+                                <i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=918189922949" target="_blank" style="margin-right: 30px;">
+                                <i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i>
+                            </a>
+                            <a href="https://www.facebook.com/aruntextiless" target="_blank" style="margin-right: 30px;">
+                                <i class="fa-brands fa-youtube fa-2xl" style="color: #ffffff;"></i>
+                            </a>
+                                <i class="fi-rs-user"></i><a href="{{ url_for('auth.logout') }}" style="color: #ffffff;">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom header-bottom-bg-color sticky-bar">
+            <div class="container">
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1">
+                        <a href="{{ url_for('views.index') }}"><img src="../static/imgs/theme/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                        <div class="main-categori-wrap d-none d-lg-block">
+                        </div>
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li><a href="{{ url_for('views.index') }}">Home</a></li>
+                                    <li><a href="{{ url_for('views.about') }}">About</a></li>
+                                    <li><a href="{{ url_for('views.productPageList') }}">Products</a></li>
+                                    <li><a href="{{ url_for('views.contact') }}">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="hotline d-none d-lg-block">
+                        <p><i class="fi-rs-headset"></i><span>For Enquiry</span>(+91)-8189922949</p>
+                    </div>
+
+                    <div class="header-action-right">
+                        <div class="header-action-2">
+                            <div class="header-action-icon-2">
+                                <a class="mini-cart-icon" href="{{ url_for('auth.cart') }}">
+                                    <img alt="Evara" src="../static/imgs/theme/icons/icon-cart.svg">
+                                    <span class="pro-count white">{{ cart_count }}</span>
+                                </a>
+                            </div>
+
+                            <div class="header-action-icon-2">
+                              {% if customer %}
+                                  <span>Welcome, {{ customer.username }}</span>
+                              {% endif %}
+                          </div>
+                            
+                            <div class="header-action-icon-2 d-block d-lg-none">
+                                <div class="burger-icon burger-icon-white">
+                                    <span class="burger-icon-top"></span>
+                                    <span class="burger-icon-mid"></span>
+                                    <span class="burger-icon-bottom"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+
+    <main class="main-content position-relative border-radius-lg">
+        <section class="content-main">
+            <div class="content-header">
+                <h2 class="content-title">Profile setting</h2>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row gx-5">
+                        <aside class="col-lg-3 border-end">
+                            <nav class="nav nav-pills flex-lg-column mb-4">
+                                <a class="nav-link" aria-current="page" href="#">Profile</a>
+                                <a class="nav-link active" href="#">Cart</a>
+                                <a class="nav-link " href="{{ url_for('auth.track_our_order') }}">Track Order</a>
+                            </nav>
+                        </aside>
+                        <div class="col-lg-9">
+                            <section class="content-main p-xl-4">
+                                <div class="content-header">
+                                    <div>
+                                        <h2 class="content-title card-title">Your Cart</h2>
+                                        <p style="color: black;">Details of items in your cart</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="40%">Product</th>
+                                                        <th width="20%">Unit Price</th>
+                                                        <th width="20%">Quantity</th>
+                                                        <th scope="col">Remove</th>
+                                                        <th width="20%" class="text-end">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for details in cart_details %}
+                                                    <tr>
+                                                        <td>
+                                                            <a class="itemside" href="#">
+                                                                <div class="left">
+                                                                    <img src="{{ details.product.product_picture }}" width="40" height="40" class="img-xs" alt="Item">
+                                                                </div>
+                                                                <div class="info">{{ details.product.product_name }}</div>
+                                                            </a>
+                                                        </td>
+                                                        <td>₹{{ details.product.no_of_products_price }}</td>
+
+                                                        <td>
+                                                            <div class="quantity-control">
+                                                                <span class="quantity">{{ details.cart_item.quantity }}</span>
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td class="action" data-title="Remove">
+                                                            <form action="{{ url_for('auth.remove_from_cart', cart_item_id=details.cart_item.id) }}" method="post" style="display:inline;">
+                                                                {{ form.hidden_tag() }}
+                                                                <button type="submit" class="btn btn-danger btn-sm"><i class="fi-rs-trash"></i></button>
+                                                            </form>
+                                                        </td>
+                                                        <td class="text-end">₹{{ details.product.no_of_products_price * details.cart_item.quantity }}</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                    <tr>
+                                                        <td colspan="5">
+                                                            <article class="float-end">
+                                                                <dl class="dlist">
+                                                                    <dt>Subtotal:</dt>
+                                                                    <dd style="text-align: right;">₹{{ total_amount }}</dd>
+                                                                </dl>
+                                                                {% if total_amount > 10 %}
+                                                                <dl class="dlist">
+                                                                    <dt>Discount (10%) for above 10:</dt>
+                                                                    <dd style="text-align: right;">-₹{{ (total_amount * 0.10) | round(2) }}</dd>
+                                                                </dl>
+                                                                <dl class="dlist">
+                                                                    <dt>Grand total:</dt>
+                                                                    <dd style="text-align: right;"><b class="h5">₹{{ (total_amount - (total_amount * 0.10) ) | round(2) }}</b></dd>
+                                                                </dl>
+                                                                {% else %}
+                                                                <dl class="dlist">
+                                                                    <dt>Grand total:</dt>
+                                                                    <dd style="text-align: right;"><b class="h5">₹{{ total_amount }}</b></dd>
+                                                                </dl>
+                                                                {% endif %}
+                                                            </article>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <form action="/payment" method="POST">
+                                            {{ form.hidden_tag() }}
+                                            <input type="hidden" name="amount" value="{{ total_amount + 10 }}">
+                                            <input type="hidden" name="purpose" value="Purchase from Arun Textiles">
+                                            <input type="text" name="name" placeholder="Your Name" required>
+                                            <input type="email" name="email" placeholder="Your Email" required>
+                                            <input type="text" name="phone" placeholder="Your Phone Number" required>
+                                            <button type="submit" class="btn btn-primary">Make Payment</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+
+  
+  <!--   Core JS Files   -->
+
+  <script>
+
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+<script src="../static/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="../static/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="../static/js/plugins/select2.min.js"></script>
+<script src="../static/js/plugins/perfect-scrollbar.js"></script>
+<script src="../static/js/core/popper.min.js"></script>
+<script src="../static/js/core/bootstrap.min.js"></script>
+<script src="../static/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="../static/js/plugins/smooth-scrollbar.min.js"></script>
+<script src="../static/js/plugins/chartjs.min.js"></script>
+
+<!-- Main Script -->
+<script src="../static/js/main.js" type="text/javascript"></script>
+
+
+    {% include 'footer.html' %}
+
+
+</html>
+
+
+
+    
+  
